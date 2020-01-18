@@ -1,0 +1,2 @@
+debian/fcitx-config-gtk3.desktop /usr/share/applications/
+usr/bin/fcitx-config-gtk3
