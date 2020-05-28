@@ -191,10 +191,14 @@ GtkWidget* popup_new(GtkWidget* parent, const gchar* text, gboolean mouse)
     GtkWidget* w = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_type_hint(GTK_WINDOW(w), GDK_WINDOW_TYPE_HINT_UTILITY);
     gtk_window_set_position(GTK_WINDOW(w), mouse ? GTK_WIN_POS_MOUSE : GTK_WIN_POS_CENTER_ALWAYS);
+    //modified by shangxiudong-UT000492-20200526 BUG:5599 on pms
+    gtk_widget_set_size_request(GTK_WINDOW(w), 200,40);
+
     if (parent)
         gtk_window_set_transient_for(GTK_WINDOW(w), GTK_WINDOW(gtk_widget_get_toplevel(parent)));
     gtk_window_set_modal(GTK_WINDOW(w), TRUE);
     gtk_window_set_decorated(GTK_WINDOW(w), TRUE);
+    gtk_window_set_title(GTK_WINDOW(w), _("Short-Cut-Key Configuration"));
     if (text) {
         GtkWidget* label = gtk_label_new(text);
         gtk_container_add(GTK_CONTAINER(w), label);

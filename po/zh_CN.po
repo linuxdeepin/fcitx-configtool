@@ -162,3 +162,7 @@ msgstr "取消(_C)"
 #: gtk3/sub_config_widget.c:170
 msgid "_OK"
 msgstr "确认(_O)"
+
+#: gtk/keygrab.c:168 gtk3/keygrab.c:201
+msgid "Short-Cut-Key Configuration"
+msgstr "快捷键设置"
