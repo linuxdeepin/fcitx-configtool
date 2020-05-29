@@ -121,7 +121,7 @@ fcitx_im_widget_init(FcitxImWidget* self)
     _GET_OBJECT(moveupbutton)
     _GET_OBJECT(movedownbutton)
     _GET_OBJECT(configurebutton)
-    _GET_OBJECT(default_layout_button)
+    // _GET_OBJECT(default_layout_button)
     _GET_OBJECT(scrolledwindow)
     _GET_OBJECT(toolbar)
 
@@ -142,14 +142,14 @@ fcitx_im_widget_init(FcitxImWidget* self)
     gtk_tool_button_set_icon_widget(GTK_TOOL_BUTTON(self->moveupbutton), gtk_image_new_from_gicon(g_themed_icon_new_with_default_fallbacks("go-up-symbolic-hack"), GTK_ICON_SIZE_BUTTON));
     gtk_tool_button_set_icon_widget(GTK_TOOL_BUTTON(self->movedownbutton), gtk_image_new_from_gicon(g_themed_icon_new_with_default_fallbacks("go-down-symbolic-hack"), GTK_ICON_SIZE_BUTTON));
     gtk_tool_button_set_icon_widget(GTK_TOOL_BUTTON(self->configurebutton), gtk_image_new_from_gicon(g_themed_icon_new_with_default_fallbacks("preferences-system-symbolic-hack"), GTK_ICON_SIZE_BUTTON));
-    gtk_tool_button_set_icon_widget(GTK_TOOL_BUTTON(self->default_layout_button), gtk_image_new_from_gicon(g_themed_icon_new_with_default_fallbacks("input-keyboard-symbolic-hack"), GTK_ICON_SIZE_BUTTON));
+    // gtk_tool_button_set_icon_widget(GTK_TOOL_BUTTON(self->default_layout_button), gtk_image_new_from_gicon(g_themed_icon_new_with_default_fallbacks("input-keyboard-symbolic-hack"), GTK_ICON_SIZE_BUTTON));
 
     g_signal_connect(G_OBJECT(self->addimbutton), "clicked", G_CALLBACK(_fcitx_im_widget_addim_button_clicked), self);
     g_signal_connect(G_OBJECT(self->delimbutton), "clicked", G_CALLBACK(_fcitx_im_widget_delim_button_clicked), self);
     g_signal_connect(G_OBJECT(self->moveupbutton), "clicked", G_CALLBACK(_fcitx_im_widget_moveup_button_clicked), self);
     g_signal_connect(G_OBJECT(self->movedownbutton), "clicked", G_CALLBACK(_fcitx_im_widget_movedown_button_clicked), self);
     g_signal_connect(G_OBJECT(self->configurebutton), "clicked", G_CALLBACK(_fcitx_im_widget_configure_button_clicked), self);
-    g_signal_connect(G_OBJECT(self->default_layout_button), "clicked", G_CALLBACK(_fcitx_im_widget_default_layout_button_clicked), self);
+    // g_signal_connect(G_OBJECT(self->default_layout_button), "clicked", G_CALLBACK(_fcitx_im_widget_default_layout_button_clicked), self);
     g_signal_connect(G_OBJECT(self->imview), "row-activated", G_CALLBACK(_fcitx_im_widget_row_activated), self);
 }
 

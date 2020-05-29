@@ -174,7 +174,7 @@
             <property name="homogeneous">True</property>
           </packing>
         </child>
-        <child>
+        <!-- <child>
           <object class="GtkToolButton" id="default_layout_button">
             <property name="use_action_appearance">False</property>
             <property name="visible">True</property>
@@ -186,7 +186,7 @@
             <property name="expand">False</property>
             <property name="homogeneous">True</property>
           </packing>
-        </child>
+        </child> -->
       </object>
       <packing>
         <property name="expand">False</property>
