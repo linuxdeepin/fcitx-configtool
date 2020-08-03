@@ -40,6 +40,38 @@ enum {
 
 G_DEFINE_TYPE(FcitxMainWindow, fcitx_main_window, GTK_TYPE_WINDOW)
 
+/* 部分配置，比如托盘显示，需要重启fcitx后才能生效 by UT000591 for TaskID 30197 */
+gboolean reboot_fcitx_confirm(GtkApplication *self,GdkEvent *event, gpointer data)
+{
+    g_message("Shutting down\n");
+
+    if ( FALSE == getConfigChangedFlag()) {
+        return FALSE;
+    }
+
+    GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;
+    GtkWidget* dialog = gtk_dialog_new_with_buttons(_("Restart fcitx"), (GtkWindow*)self, flags,
+                                                    _("_Cancel"), GTK_RESPONSE_CANCEL,
+                                                    _("_Restart"), GTK_RESPONSE_OK,
+                                                    NULL);
+    GtkWidget* content_area = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
+    GtkWidget* label = gtk_label_new(_("Some configurations will not work until restarting fcitx. Do you want to restart it now?"));
+    gtk_container_add(GTK_CONTAINER(content_area), label);
+    gtk_widget_show_all(dialog);
+
+    int response = gtk_dialog_run(GTK_DIALOG(dialog));
+    if ( GTK_RESPONSE_OK == response) {
+        GError* error;
+        gchar* argv[3];
+        argv[0] = EXEC_PREFIX "/bin/fcitx";
+        argv[1] = "-r";
+        argv[2] = 0;
+        g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
+    } 
+    gtk_widget_destroy(dialog);
+    return FALSE;
+}
+
 static void fcitx_main_window_finalize(GObject* object);
 
 static void _fcitx_main_window_add_config_file_page(FcitxMainWindow* self);
@@ -104,6 +136,8 @@ fcitx_main_window_init(FcitxMainWindow* self)
     gtk_container_add(GTK_CONTAINER(self), vbox);
     gtk_window_set_icon_name(GTK_WINDOW(self), "fcitx");
     gtk_window_set_title(GTK_WINDOW(self), _("Input Method Configuration"));
+
+    g_signal_connect(self, "delete_event", (GCallback)reboot_fcitx_confirm, NULL);
 }
 
 GtkWidget*

@@ -166,3 +166,15 @@ msgstr "确认(_O)"
 #: gtk/keygrab.c:168 gtk3/keygrab.c:201
 msgid "Short-Cut-Key Configuration"
 msgstr "快捷键设置"
+
+#: gtk3/main_window.c:52
+msgid "Restart fcitx"
+msgstr "重启输入法"
+
+#: gtk3/main_window.c:54
+msgid "_Restart"
+msgstr "重启(_R)"
+
+#: gtk3/main_window.c:57
+msgid "Some configurations will not work until restarting fcitx. Do you want to restart it now?"
+msgstr "部分配置将在输入法重启后生效，是否现在重启输入法?"

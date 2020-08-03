@@ -42,6 +42,18 @@
 #define D_(d, x) dgettext (d, x)
 #define RoundColor(c) ((c)>=0?((c)<=255?c:255):0)
 
+static gboolean configChangedFlag = FALSE;
+
+gboolean getConfigChangedFlag()
+{
+    return configChangedFlag;
+}
+
+void setConfigChangedFlag(gboolean flag)
+{
+    configChangedFlag = flag;
+}
+
 G_DEFINE_TYPE(FcitxConfigWidget, fcitx_config_widget, GTK_TYPE_GRID)
 
 typedef struct {
@@ -831,6 +843,8 @@ void fcitx_config_widget_response(
         if (fp) {
             FcitxConfigSaveConfigFileFp(fp, &config_widget->config->config, config_widget->cfdesc);
             fclose(fp);
+
+            setConfigChangedFlag(TRUE);
 
             GError* error;
             gchar* argv[3];

@@ -92,6 +92,10 @@ gboolean fcitx_config_widget_response_cb(GtkDialog *dialog,
 
 GtkWidget* fcitx_config_dialog_new(FcitxAddon* addon, GtkWindow* parent);
 
+gboolean getConfigChangedFlag();
+void     setConfigChangedFlag(gboolean flag);
+
+
 G_END_DECLS
 
 #endif /* _FCITX_CONFIG_WIDGET */
