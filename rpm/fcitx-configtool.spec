@@ -8,8 +8,8 @@ Source0:	%{name}_%{version}.tar.xz
 
 BuildRequires:	gcc
 BuildRequires:	cmake, fcitx-devel, gettext, intltool, libxml2-devel
-BuildRequires:	gtk2-devel, iso-codes-devel, libtool, unique-devel
-BuildRequires:	gtk3-devel, unique3-devel
+BuildRequires:	gtk2-devel, iso-codes-devel, libtool
+BuildRequires:	gtk3-devel
 Requires:	fcitx
 
 
