@@ -4,7 +4,7 @@ Release:	1%{?dist}
 Summary:	Gtk+-based configuring tools for Fcitx
 License:	GPLv2+
 URL:		https://fcitx-im.org/wiki/Fcitx
-Source0:	%{name}-%{version}.tar.xz
+Source0:	%{name}_%{version}.tar.xz
 
 BuildRequires:	gcc
 BuildRequires:	cmake, fcitx-devel, gettext, intltool, libxml2-devel
