@@ -25,6 +25,7 @@
 #include "main_window.h"
 #include "config_widget.h"
 #include "fcitx-config-gtk3-resources.h"
+#include <fcitx-utils/utils.h>
 
 static void
 fcitx_config_app_activate (GApplication *application)
@@ -136,6 +137,9 @@ main(int argc, char **argv)
             }
         }
     }
+
+    fcitx_utils_launch_tool("fcitx-autostart", NULL);
+
     status = g_application_run (G_APPLICATION (app), argc, argv);
 
     g_object_unref (app);
