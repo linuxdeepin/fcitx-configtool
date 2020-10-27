@@ -1,3 +1,9 @@
+fcitx-configtool (0.4.10.1-2) unstable; urgency=medium
+
+  * 修复通过启动器/任务栏快捷方式/桌面快捷方式打开输入法配置，任务栏有两个输入法配置图标(一般+必现+常用功能) 来源Bug-51015
+
+ -- Shijie Chen <chenshijie@uniontech.com>  Tues, 27 Oct 2020 10:35:50 +0800
+
 fcitx-configtool (0.4.10-2) unstable; urgency=medium
 
   * Team upload.
