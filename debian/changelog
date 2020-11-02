@@ -1,3 +1,9 @@
+fcitx-configtool (0.4.10.8-1) unstable; urgency=medium
+
+  * 修复桌面快捷方式图标多国语言翻译
+
+ -- Shijie Chen <chenshijie@uniontech.com>  Mon, 02 Nov 2020 12:35:50 +0800
+
 fcitx-configtool (0.4.10.7-1) unstable; urgency=medium
 
   * 修复通过启动器/任务栏快捷方式/桌面快捷方式打开输入法配置，任务栏有两个输入法配置图标(一般+必现+常用功能) $
