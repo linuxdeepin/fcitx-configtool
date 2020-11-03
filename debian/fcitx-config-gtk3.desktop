@@ -1,18 +1,19 @@
 [Desktop Entry]
-Name=Fcitx GUI Config Tool
+Name=Input Method GUI Config Tool
 Name[zh_CN]=输入法配置
 Name[zh_TW]=輸入法設定
-GenericName=Input Method Configuration
+Name[zh_HK]=輸入法設定
+GenericName=Input Method GUI Config Tool
 GenericName[zh_CN]=输入法配置
 GenericName[zh_TW]=輸入法設定
+GenericName[zh_HK]=輸入法設定
 Comment=Fcitx GUI Config Tool
 Comment[zh_CN]=修改输入法配置
 Comment[zh_TW]=修改輸入法設定
+Comment[zh_HK]=修改輸入法設定
 Exec=fcitx-config-gtk3
 Icon=fcitx
 Type=Application
 Categories=Settings;
 X-KDE-StartupNotify=false
 StartupNotify=false
-X-Deepin-CreatedBy=com.deepin.dde.daemon.Launcher
-X-Deepin-AppID=fcitx-config-gtk3
