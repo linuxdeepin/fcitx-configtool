@@ -8,7 +8,7 @@ Uploaders:
 Build-Depends:
  cmake (>= 3.1),
  debhelper (>= 11),
- fcitx-bin,
+ fcitx,
  fcitx-libs-dev (>= 1:4.2.8),
  iso-codes,
  libdbus-glib-1-dev,
@@ -67,6 +67,23 @@ Depends:
  fcitx-config-common (= ${source:Version}),
  ${misc:Depends},
  ${shlibs:Depends},
+ fcitx-frontend-all,
+ fcitx-frontend-gtk2,
+ fcitx-frontend-gtk3,
+ fcitx-frontend-qt4,
+ fcitx-module-dbus,
+ fcitx-module-kimpanel,
+ fcitx-module-lua,
+ fcitx-module-x11,
+ fcitx-table,
+ fcitx-table-all,
+ fcitx-tools,
+ gir1.2-fcitx-1.0,
+ libfcitx-config4,
+ libfcitx-core0, 
+ libfcitx-gclient1,
+ libfcitx-qt0,
+ libfcitx-utils0,
 Description: graphic Fcitx configuration tool - Gtk+ 2 version
  Fcitx is the Free Chinese Input Toy of X, which was initially designed
  for Chinese users, and used XIM protocol. Now it has already evolved
