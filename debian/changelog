@@ -1,3 +1,9 @@
+fcitx-configtool (0.4.10.11-1) unstable; urgency=medium
+
+  * 添加fcitx强制依赖包
+
+ -- Shijie Chen <chenshijie@uniontech.com>  Wed, 02 Dec 2020 17:25:50 +0800
+
 fcitx-configtool (0.4.10.10-1) unstable; urgency=medium
 
   * 修复繁体中文图标不显示问题。
