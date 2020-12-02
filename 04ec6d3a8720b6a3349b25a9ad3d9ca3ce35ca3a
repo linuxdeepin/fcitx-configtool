@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "abb50978_35a7fcf7",
+        "filename": "debian/control",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-02T03:12:13Z",
+      "side": 1,
+      "message": "不应该是编译依赖",
+      "revId": "04ec6d3a8720b6a3349b25a9ad3d9ca3ce35ca3a",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d10758c2_835cc05f",
+        "filename": "debian/control",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-02T03:12:13Z",
+      "side": 1,
+      "message": "需要弄清 \u0027依赖\u0027 的概念，还有可选依赖",
+      "revId": "04ec6d3a8720b6a3349b25a9ad3d9ca3ce35ca3a",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    }
+  ]
+}
