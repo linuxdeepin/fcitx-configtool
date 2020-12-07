@@ -1,3 +1,9 @@
+fcitx-configtool (0.4.10.12-1) unstable; urgency=medium
+
+  * 更改fcitx强制依赖包到fcitx-config-gtk包下
+
+ -- Shijie Chen <chenshijie@uniontech.com>  Mon, 07 Dec 2020 11:31:00 +0800
+
 fcitx-configtool (0.4.10.11-1) unstable; urgency=medium
 
   * 添加fcitx强制依赖包
