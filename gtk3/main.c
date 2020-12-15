@@ -78,7 +78,8 @@ int fcitx_config_app_handle_command_line (GApplication              *application
         if (argc >= 2 && argv[1])
             addon = find_addon_by_name(mainWindow->addons, argv[1]);
         if (addon) {
-            GtkWidget* dialog = fcitx_config_dialog_new(addon, GTK_WINDOW(mainWindow));
+            gtk_widget_hide(GTK_WIDGET(mainWindow));
+            GtkWidget* dialog = fcitx_config_dialog_new(addon, NULL);
             if (dialog) {
                 gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
                 gtk_widget_show_all(GTK_WIDGET(dialog));
