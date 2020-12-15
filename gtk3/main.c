@@ -39,6 +39,7 @@ fcitx_config_app_activate (GApplication *application)
         GtkWidget *window;
         window = fcitx_main_window_new();
         gtk_application_add_window(GTK_APPLICATION(application), GTK_WINDOW(window));
+        gtk_window_set_position( GTK_WINDOW(window), GTK_WIN_POS_CENTER_ALWAYS );
         gtk_widget_show_all (GTK_WIDGET (window));
     }
 }
@@ -78,8 +79,10 @@ int fcitx_config_app_handle_command_line (GApplication              *application
             addon = find_addon_by_name(mainWindow->addons, argv[1]);
         if (addon) {
             GtkWidget* dialog = fcitx_config_dialog_new(addon, GTK_WINDOW(mainWindow));
-            if (dialog)
+            if (dialog) {
+                gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
                 gtk_widget_show_all(GTK_WIDGET(dialog));
+            }
         }
     }
 
@@ -121,6 +124,8 @@ main(int argc, char **argv)
     textdomain("fcitx-configtool");
     FcitxLogSetLevel(FCITX_NONE);
 
+    fcitx_utils_launch_tool("fcitx-autostart", NULL);
+
     GtkApplication* app = fcitx_config_app_new();
 
     int status = 0;
@@ -137,8 +142,6 @@ main(int argc, char **argv)
             }
         }
     }
-
-    fcitx_utils_launch_tool("fcitx-autostart", NULL);
 
     status = g_application_run (G_APPLICATION (app), argc, argv);
 
