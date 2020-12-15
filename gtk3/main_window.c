@@ -61,12 +61,7 @@ gboolean reboot_fcitx_confirm(GtkApplication *self,GdkEvent *event, gpointer dat
 
     int response = gtk_dialog_run(GTK_DIALOG(dialog));
     if ( GTK_RESPONSE_OK == response) {
-        GError* error;
-        gchar* argv[3];
-        argv[0] = EXEC_PREFIX "/bin/fcitx";
-        argv[1] = "-r";
-        argv[2] = 0;
-        g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
+        fcitx_utils_launch_restart();
     } 
     gtk_widget_destroy(dialog);
     return FALSE;
