@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "05619367_0b248af1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-12-16T05:13:01Z",
+      "side": 1,
+      "message": "fix后必须存在一个\u0027:\u0027",
+      "revId": "bbf4b75af831f766795458e8846f61b728c0aefd",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "91af8a83_d84c6504",
         "filename": "gtk3/main.c",
         "patchSetId": 2
