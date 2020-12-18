@@ -1,3 +1,9 @@
+fcitx-configtool (0.4.10.14-1) unstable; urgency=medium
+
+  * 添加香港繁体中文显示
+
+ -- Shijie Chen <chenshijie@uniontech.com>  Fri, 18 Dec 2020 10:30:00 +0800
+
 fcitx-configtool (0.4.10.13-1) unstable; urgency=medium
 
   * 更改为启动显示居中界面
