@@ -13,11 +13,9 @@ Build-Depends:
  iso-codes,
  libdbus-glib-1-dev,
  libgtk-3-dev (>= 3.20),
- libgtk2.0-dev (>= 2.22),
- libunique-dev,
  pkg-config,
-Standards-Version: 4.1.5
-Homepage: https://gitlab.com/fcitx/fcitx-configtool
+Standards-Version: 4.4.1
+Homepage: https://github.com/fcitx/fcitx-configtool
 Vcs-Git: https://salsa.debian.org/input-method-team/fcitx-configtool.git
 Vcs-Browser: https://salsa.debian.org/input-method-team/fcitx-configtool
 
@@ -65,7 +63,7 @@ Suggests:
  libfcitx-gclient1,
  libfcitx-qt0,
  libfcitx-utils0,
-Description: graphic Fcitx configuration tool - Gtk+ 3 version
+Description: graphic Fcitx configuration tool
  Fcitx is the Free Chinese Input Toy of X, which was initially designed
  for Chinese users, and used XIM protocol. Now it has already evolved
  into a highly modularized, feature rich input method framework for
@@ -77,24 +75,4 @@ Description: graphic Fcitx configuration tool - Gtk+ 3 version
  the first time. It has also greatly lower the threshold for developers,
  making the development of extended functions much easier than ever before.
  .
- This package provides GTK+ 3 version of the graphic configuration tool.
-
-Package: fcitx-config-gtk2
-Architecture: any
-Depends:
- fcitx-config-common (= ${source:Version}),
- ${misc:Depends},
- ${shlibs:Depends},
-Description: graphic Fcitx configuration tool - Gtk+ 2 version
- Fcitx is the Free Chinese Input Toy of X, which was initially designed
- for Chinese users, and used XIM protocol. Now it has already evolved
- into a highly modularized, feature rich input method framework for
- Unix-like platforms supporting a considerable amount of frontends,
- backends and modules.
- .
- It is an ideal choice for the vast majority. Many of its features make
- users of Unix-like platforms have a fully modern input experience for
- the first time. It has also greatly lower the threshold for developers,
- making the development of extended functions much easier than ever before.
- .
- This package provides GTK+ 2 version of the graphic configuration tool.
+ This package provides a graphical configuration tool.
