@@ -15,5 +15,6 @@ Exec=fcitx-config-gtk3
 Icon=fcitx
 Type=Application
 Categories=Settings;
+NoDisplay=true
 X-KDE-StartupNotify=false
 StartupNotify=false
