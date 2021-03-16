@@ -43,10 +43,13 @@ Package: fcitx-config-gtk
 Architecture: any
 Depends:
  fcitx-config-common (= ${source:Version}),
+ fcitx, 
+ fcitx-implugin,
+ fcitx-defaultim,
+ deepin-fcitxconfigtool-plugin,
  ${misc:Depends},
  ${shlibs:Depends},
 Suggests:
- fcitx,
  fcitx-frontend-all,
  fcitx-frontend-gtk2,
  fcitx-frontend-gtk3,
@@ -63,9 +66,6 @@ Suggests:
  libfcitx-gclient1,
  libfcitx-qt0,
  libfcitx-utils0,
- fcitx-implugin,
- fcitx-defaultim,
- deepin-fcitxconfigtool-plugin,
 Description: graphic Fcitx configuration tool
  Fcitx is the Free Chinese Input Toy of X, which was initially designed
  for Chinese users, and used XIM protocol. Now it has already evolved
