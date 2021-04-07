@@ -10,7 +10,6 @@ Summary:	Gtk+-based configuring tools for Fcitx
 License:	GPLv2+
 URL:		https://fcitx-im.org/wiki/Fcitx
 Source0:	%{name}-%{version}.tar.xz
-Patch0:     fix-windows-cannot-close-bug.patch
 
 BuildRequires:	gcc
 BuildRequires:	cmake, fcitx-devel, gettext, intltool, libxml2-devel
@@ -26,6 +25,8 @@ Fcitx.
 %global debug_package %{nil}
 
 %prep
+%setup -q
+patch -p1 < rpm/fix-windows-cannot-close-bug
 %autosetup -n %{name}-%{version} -p1
 
 %build
