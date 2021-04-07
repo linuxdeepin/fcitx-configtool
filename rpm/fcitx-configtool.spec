@@ -26,8 +26,7 @@ Fcitx.
 
 %prep
 %setup -q
-patch -p1 < rpm/fix-windows-cannot-close-bug
-%autosetup -n %{name}-%{version} -p1
+patch -p1 < rpm/fix-windows-cannot-close-bug.patch
 
 %build
 mkdir -pv build
