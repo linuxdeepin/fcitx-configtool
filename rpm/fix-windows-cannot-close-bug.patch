@@ -1,0 +1,11 @@
+--- fcitx-configtool-0.4.10.orig/gtk3/keygrab.c
++++ fcitx-configtool-0.4.10/gtk3/keygrab.c
+@@ -87,7 +87,7 @@ void begin_key_grab(KeyGrabButton* self,
+     GdkDisplay* display = gdk_window_get_display (window);
+     GdkSeat* seat = gdk_display_get_default_seat (display);
+     while (gdk_seat_grab (seat, window,
+-                     GDK_SEAT_CAPABILITY_ALL, FALSE,
++                     GDK_SEAT_CAPABILITY_KEYBOARD, FALSE,
+                      NULL, NULL, NULL, NULL) != GDK_GRAB_SUCCESS)
+         usleep(100);
+ }
