@@ -928,6 +928,19 @@ gboolean fcitx_config_widget_response_cb(GtkDialog *dialog,
     return FALSE;
 }
 
+gboolean fcitx_config_widget_response_cb_exit(GtkDialog *dialog,
+        gint response,
+        gpointer user_data)
+{
+    if (response == GTK_RESPONSE_OK) {
+        FcitxConfigWidget* config_widget = (FcitxConfigWidget*) user_data;
+        fcitx_config_widget_response(config_widget, CONFIG_WIDGET_SAVE);
+    }
+    gtk_widget_destroy(GTK_WIDGET(dialog));
+    exit(0);
+    return FALSE;
+}
+
 GtkWidget* fcitx_config_dialog_new(FcitxAddon* addon, GtkWindow* parent)
 {
     gchar* config_desc_name = g_strdup_printf("%s.desc", addon->name);
@@ -954,8 +967,16 @@ GtkWidget* fcitx_config_dialog_new(FcitxAddon* addon, GtkWindow* parent)
     g_free(config_file_name);
     gtk_widget_set_size_request(GTK_WIDGET(config_widget), -1, 400);
 
-    g_signal_connect(dialog, "response",
-                    G_CALLBACK(fcitx_config_widget_response_cb),
-                    config_widget);
+    if(parent != NULL){
+        g_signal_connect(dialog, "response",
+                        G_CALLBACK(fcitx_config_widget_response_cb),
+                        config_widget);
+    }
+    else {
+        g_signal_connect(dialog, "response",
+                        G_CALLBACK(fcitx_config_widget_response_cb_exit),
+                        config_widget);
+    }
+
     return dialog;
 }

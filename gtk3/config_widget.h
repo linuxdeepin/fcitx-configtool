@@ -90,6 +90,10 @@ gboolean fcitx_config_widget_response_cb(GtkDialog *dialog,
         gint response,
         gpointer user_data);
 
+gboolean fcitx_config_widget_response_cb_exit(GtkDialog *dialog,
+        gint response,
+        gpointer user_data);
+
 GtkWidget* fcitx_config_dialog_new(FcitxAddon* addon, GtkWindow* parent);
 
 gboolean getConfigChangedFlag();
