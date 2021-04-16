@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Cindy0514, 2021
+# yeshe lhamo <981611630@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
@@ -13,149 +13,151 @@ msgstr ""
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
 "POT-Creation-Date: 2014-07-06 10:09+0200\n"
 "PO-Revision-Date: 2021-04-07 09:29+0000\n"
-"Last-Translator: Cindy0514, 2021\n"
-"Language-Team: Chinese (Taiwan) (https://www.transifex.com/linuxdeepin/teams/114346/zh_TW/)\n"
+"Last-Translator: yeshe lhamo <981611630@qq.com>, 2021\n"
+"Language-Team: Tibetan (https://www.transifex.com/linuxdeepin/teams/114346/bo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
+"Language: bo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: gtk3/config_widget.c:239 gtk/config_widget.c:192
 msgid "Clear font setting"
-msgstr "清除字體設定"
+msgstr "ཡིག་གཟུགས་སྒྲིག་འགོད་གཙང་སེལ།"
 
 #: gtk3/config_widget.c:432 gtk3/config_widget.c:529 gtk/config_widget.c:270
 msgid "Other"
-msgstr "其他"
+msgstr "གཞན།"
 
 #: gtk3/config_widget.c:614
 msgid "Show Advanced Options"
-msgstr "顯示進階設定選項"
+msgstr "མཐོ་རིམ་གདམ་གསེས་མངོན་པ།"
 
 #: gtk3/config_widget.c:937 gtk3/im_config_dialog.c:73 gtk3/im_dialog.c:127
 #: gtk3/sub_config_widget.c:168
 msgid "_Cancel"
-msgstr "取消(_C)"
+msgstr "འདོར་བ།(_C)"
 
 #: gtk3/config_widget.c:939 gtk3/im_config_dialog.c:75 gtk3/im_dialog.c:129
 #: gtk3/sub_config_widget.c:170
 msgid "_OK"
-msgstr "確定(_O)"
+msgstr "གཏན་ཁེལ།(_O)"
 
 #: gtk3/gdm-languages.c:697 gtk/gdm-languages.c:697
 msgid "Unspecified"
-msgstr "未指定"
+msgstr "དམིགས་བཙུགས་བྱས་མེད།"
 
 #: gtk3/im_config_dialog.c:132
 msgid "Default keyboard layout"
-msgstr "預設鍵盤配置"
+msgstr "སོར་བཞག་གི་མཐེབ་གཞོང་བཀོད་པ།"
 
 #: gtk3/im_config_dialog.c:164
 msgid "Input Method Default"
-msgstr "輸入法預設"
+msgstr "ནང་འཇུག་བྱེད་སྟངས་སོར་བཞག"
 
 #: gtk3/im_config_dialog.c:164
 msgid "Default"
-msgstr "預設"
+msgstr "སོར་བཞག"
 
 #: gtk3/im_config_dialog.c:192
 msgid "Keyboard layout:"
-msgstr "鍵盤配置："
+msgstr "མཐེབ་གཞོང་བཀོད་པ།"
 
 #: gtk3/im_config_dialog.c:192
 msgid "Keyboard layout to use when no input window:"
-msgstr "無可輸入窗口時使用的鍵盤配置："
+msgstr "ནང་འཇུག་བྱེད་ས་མེད་དུས་སྤྱོད་པའི་མཐེབ་གཞོང་བཀོད་པ།"
 
 #: gtk3/im_config_dialog.c:209
 msgid "Input method settings:"
-msgstr "輸入法設定："
+msgstr "ནང་འཇུག་བྱེད་སྟངས་སྒྲིག་འགོད།"
 
 #: gtk3/im_dialog.c:123
 msgid "Add input method"
-msgstr "新增輸入法"
+msgstr "ནང་འཇུག་བྱེད་སྟངས་སྣོན་པ།"
 
 #: gtk3/im_dialog.c:168
 msgid "Search Input Method"
-msgstr "搜尋輸入法"
+msgstr "ནང་འཇུག་བྱེད་སྟངས་བཤེར་འཚོལ།"
 
 #: gtk3/im_dialog.c:256 gtk3/im_dialog.c:258 gtk3/im_widget.c:259
 #: gtk3/im_widget.c:261 gtk/im_widget.c:314 gtk/im_widget.c:316
 msgid "Unknown"
-msgstr "未知"
+msgstr "མི་ཤེས་པ།"
 
 #: gtk3/keygrab.c:66 gtk3/keygrab.c:181 gtk/keygrab.c:138
 msgid "Empty"
-msgstr "空"
+msgstr "སྟོང་པ།"
 
 #: gtk3/keygrab.c:80 gtk/keygrab.c:74
 msgid "Please press the new key combination"
-msgstr "請按下新按鍵組合"
+msgstr "མཐེབ་གཞོང་ཚོགས་པ་གསར་པ་མནན་པ།"
 
 #: gtk3/main_window.c:106 gtk/main_window.c:149
 msgid "Input Method Configuration"
-msgstr "輸入法設定"
+msgstr "ནང་འཇུག་བྱེད་སྟངས་སྡེབ་སྒྲིག"
 
 #: gtk3/main_window.c:203 gtk/main_window.c:294
 msgid "Global Config"
-msgstr "全域設定"
+msgstr "ཁྱོན་ཡོངས་སྡེབ་སྒྲིག"
 
 #: gtk3/main_window.c:209 gtk/im_widget.c:102 gtk/im_widget.c:153
 #: gtk/main_window.c:300 gtk3/im_dialog.ui:74 gtk3/im_widget.ui:63
 msgid "Input Method"
-msgstr "輸入法"
+msgstr "ནང་འཇུག་བྱེད་སྟངས།"
 
 #: gtk3/main_window.c:221
 msgid "Appearance"
-msgstr "外觀"
+msgstr "ཕྱི་ཚུལ།"
 
 #: gtk3/main_window.c:283
 msgid "Advanced"
-msgstr "進階"
+msgstr "མཐོ་རིམ།"
 
 #: gtk3/main_window.c:294
 msgid "Search Addon"
-msgstr "搜索附加元件"
+msgstr "ཟུར་སྣོན་སྒྲིག་ལྷུ་བཤེར་འཚོལ།"
 
 #: gtk3/main_window.c:357 gtk/main_window.c:360
 msgid "Configure"
-msgstr "設定"
+msgstr "སྡེབ་སྒྲིག"
 
 #: gtk3/main_window.c:374 gtk/main_window.c:375
 msgid "Addon"
-msgstr "附加元件"
+msgstr "ཟུར་སྣོན་སྒྲིག་ལྷུ།"
 
 #: gtk3/sub_config_widget.c:287
 msgid "Didn't install related component."
-msgstr "沒有安裝相關組件。"
+msgstr "འབྲེལ་ཡོད་སྒྲིག་ལྷུ་སྒྲིག་འཇུག་བྱས་མེད།"
 
 #: gtk3/ui_widget.c:48
 msgid "Cannot load currently used user interface info"
-msgstr "無法載入目前使用者界面訊息"
+msgstr "མིག་སྔའི་སྤྱོད་མཁན་ཡོངས་ཀྱི་མཐུད་ངོས་ཆ་འཕྲིན་སྣོན་འཇུག་བྱ་ཐབས་བྲལ།"
 
 #: gtk3/ui_widget.c:106
 #, c-format
 msgid "No configuration option for %s."
-msgstr "%s 無設定選項。"
+msgstr "%sསྡེབ་སྒྲིག་གདམ་གསེས་མེད།"
 
 #: gtk/im_widget.c:92
 msgid "Available Input Method"
-msgstr "可用的輸入法"
+msgstr "སྤྱོད་རུང་བའི་ནང་འཇུག་བྱེད་སྟངས།"
 
 #: gtk/im_widget.c:115 gtk3/im_dialog.ui:106
 msgid "Only Show Current Language"
-msgstr "僅顯示目前的語言"
+msgstr "མིག་སྔའི་སྐད་ཡིག་མངོན་པ།"
 
 #: gtk/im_widget.c:146
 msgid "Current Input Method"
-msgstr "目前的輸入法"
+msgstr "མིག་སྔའི་ནང་འཇུག་བྱེད་སྟངས།"
 
 #: gtk/im_widget.c:192 gtk3/im_widget.ui:115
 msgid ""
 "The first input method will be inactive state. Usually you need to put "
 "<b>Keyboard</b> or <b>Keyboard - <i>layout name</i></b> in the first place."
-msgstr "第一個輸入法將作為非激活狀態。通常您需要將<b>鍵盤<b>或者<b>鍵盤 - <i>配置名稱</i></b>放到第一個。"
+msgstr ""
+"ནང་འཇུག་བྱེད་སྟངས་དང་པོ་དེ་སྐུལ་སློང་བྱས་མེད་སྐབས། "
+"ཁྱོད་ཀྱིས་<b>མཐེབ་གཞོང་</b>གམ་ཡང་ན་<b>མཐེབ་གཞོང་<i>བཀོད་པའི་མིང་</i></b>དང་པོར་འཇོག་དགོས།"
 
 #: gtk3/im_dialog.ui:86 gtk3/im_widget.ui:75
 msgid "Language"
-msgstr "語言"
+msgstr "སྐད་ཡིག"
