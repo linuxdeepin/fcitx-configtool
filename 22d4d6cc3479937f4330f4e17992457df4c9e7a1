@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "515e750c_c4085a2b",
+        "filename": "gtk3/config_widget.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-04-18T03:15:37Z",
+      "side": 1,
+      "message": "改动行数(修改和新增): 0; 删除代码行数: 22; 注释率: 不计算",
+      "revId": "22d4d6cc3479937f4330f4e17992457df4c9e7a1",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cdfe7614_3d63d70a",
+        "filename": "gtk3/main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-04-18T03:15:37Z",
+      "side": 1,
+      "message": "注释行数: 0; 改动行数(修改和新增): 1; 注释率: 0.0%",
+      "revId": "22d4d6cc3479937f4330f4e17992457df4c9e7a1",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    }
+  ]
+}
