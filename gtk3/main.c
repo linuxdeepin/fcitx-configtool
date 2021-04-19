@@ -86,7 +86,7 @@ int fcitx_config_app_handle_command_line (GApplication              *application
             }
         }
         if (argc == 3 && addon && strcmp(argv[2],"exit") == 0) {
-            fcitx_utils_kill_fcitx_config_gtk3(addon);
+            fcitx_utils_kill_fcitx_config_gtk3();
             exit(9);
         }
     }
