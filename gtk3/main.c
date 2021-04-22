@@ -72,14 +72,19 @@ int fcitx_config_app_handle_command_line (GApplication              *application
     gchar** argv = g_application_command_line_get_arguments(command_line, &argc);
     g_application_activate(G_APPLICATION (application));
     GList* list = gtk_application_get_windows (GTK_APPLICATION(application));
+    static GtkWidget* dialog = NULL;
     if (list) {
         FcitxMainWindow* mainWindow = FCITX_MAIN_WINDOW (list->data);
         FcitxAddon* addon = NULL;
         if (argc >= 2 && argv[1])
             addon = find_addon_by_name(mainWindow->addons, argv[1]);
         if (argc == 2 && addon) {
+            if (dialog) {
+                //There are one window opened already. Close it first
+                gtk_widget_destroy(dialog);
+            }
             gtk_widget_hide(GTK_WIDGET(mainWindow));
-            GtkWidget* dialog = fcitx_config_dialog_new(addon, NULL);
+            dialog = fcitx_config_dialog_new(addon, NULL);
             if (dialog) {
                 gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
                 gtk_widget_show_all(GTK_WIDGET(dialog));
