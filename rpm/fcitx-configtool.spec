@@ -28,6 +28,10 @@ Fcitx.
 %setup -q
 patch -p1 < rpm/fix-windows-cannot-close-bug.patch
 
+desktop-file-install --delete-original \
+  --dir %{buildroot}%{_datadir}/applications \
+  %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %build
 mkdir -pv build
 pushd build
@@ -45,6 +49,9 @@ popd
 %doc README
 %license COPYING
 %{_bindir}/*
+
+%files data
+%{_datadir}/applications/%{name}.desktop
 
 %changelog
 * Tue Apr 6 2021 uoser <uoser@uniontech.com> - 0.4.10.19-7
