@@ -50,9 +50,6 @@ popd
 %license COPYING
 %{_bindir}/*
 
-%files data
-%{_datadir}/applications/%{name}.desktop
-
 %changelog
 * Tue Apr 6 2021 uoser <uoser@uniontech.com> - 0.4.10.19-7
 - Initial Package
