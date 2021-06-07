@@ -28,10 +28,6 @@ Fcitx.
 %setup -q
 patch -p1 < rpm/fix-windows-cannot-close-bug.patch
 
-desktop-file-install --delete-original \
-  --dir %{buildroot}%{_datadir}/applications \
-  %{buildroot}%{_datadir}/applications/%{name}.desktop
-
 %build
 mkdir -pv build
 pushd build
