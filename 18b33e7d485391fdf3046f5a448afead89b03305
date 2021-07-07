@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a0385698_6ccd53f1",
+        "filename": "gtk3/im_config_dialog.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-07-07T06:51:51Z",
+      "side": 1,
+      "message": "注释行数: 2; 改动行数(修改和新增): 19; 注释率: 10.5%",
+      "revId": "18b33e7d485391fdf3046f5a448afead89b03305",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    }
+  ]
+}
