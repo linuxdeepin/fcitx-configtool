@@ -111,6 +111,21 @@ layout_foreach_cb(gpointer data, gpointer user_data)
     }
 }
 
+static int fcitx_im_config_thirdpart(FcitxConfigFileDesc *cdesc)
+{
+    HASH_FOREACH(groupdesc, cdesc->groupsDesc, FcitxConfigGroupDesc) {
+        HASH_FOREACH(optiondesc, groupdesc->optionsDesc, FcitxConfigOptionDesc) {
+            if (optiondesc->desc && strlen(optiondesc->desc) != 0) {
+                if (0 == strcmp(optiondesc->optionName, "Setting") && T_ExternalOption == optiondesc->type) {
+                    //printf("%s:%d\tDONE! [%s]\n", __FILE__, __LINE__, optiondesc->rawDefaultValue);
+                    fcitx_utils_start_process(&(optiondesc->rawDefaultValue));
+                    return 1;
+                }
+            }
+        }
+    }
+    return 0;
+}
 
 GtkWidget* fcitx_im_config_dialog_new(GtkWindow* parent, FcitxAddon* addon, gchar* imname)
 {
@@ -137,6 +152,9 @@ GtkWidget* fcitx_im_config_dialog_new(GtkWindow* parent, FcitxAddon* addon, gcha
         cfdesc = get_config_desc(config_desc_name);
         g_free(config_desc_name);
         configurable = (gboolean)(cfdesc != NULL || strlen(addon->subconfig) != 0);
+    }
+    if (fcitx_im_config_thirdpart(cfdesc)) {
+        return NULL;
     }
 
     do {
