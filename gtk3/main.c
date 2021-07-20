@@ -84,10 +84,20 @@ int fcitx_config_app_handle_command_line (GApplication              *application
                 gtk_widget_destroy(dialog);
             }
             gtk_widget_hide(GTK_WIDGET(mainWindow));
-            dialog = fcitx_config_dialog_new(addon, NULL);
-            if (dialog) {
-                gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
-                gtk_widget_show_all(GTK_WIDGET(dialog));
+
+            FcitxConfigFileDesc* cfdesc = NULL;
+            if (addon) {
+                    gchar* config_desc_name = g_strdup_printf("%s.desc", addon->name);
+                    cfdesc = get_config_desc(config_desc_name);
+                    g_free(config_desc_name);
+            }
+
+            if (0 == fcitx_im_config_thirdpart(cfdesc)) {
+                    dialog = fcitx_config_dialog_new(addon, NULL);
+                    if (dialog) {
+                            gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ALWAYS);
+                            gtk_widget_show_all(GTK_WIDGET(dialog));
+                    }
             }
         }
         if (argc == 3 && addon && strcmp(argv[2],"exit") == 0) {
