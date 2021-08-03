@@ -115,12 +115,25 @@ layout_foreach_cb(gpointer data, gpointer user_data)
 //If is third part im. Use their own config-UI
 int fcitx_im_config_thirdpart(FcitxConfigFileDesc *cdesc)
 {
+    char* comd = NULL;
+    char* para = NULL;
     HASH_FOREACH(groupdesc, cdesc->groupsDesc, FcitxConfigGroupDesc) {
         HASH_FOREACH(optiondesc, groupdesc->optionsDesc, FcitxConfigOptionDesc) {
             if (optiondesc->desc && strlen(optiondesc->desc) != 0) {
-                if (0 == strcmp(optiondesc->optionName, "Setting") && 10 == optiondesc->type) {
+                if (0 == strcmp(optiondesc->optionName, "Setting") && T_ExternalOption == optiondesc->type) {
                     //printf("%s:%d\tDONE! [%s]\n", __FILE__, __LINE__, optiondesc->rawDefaultValue);
-                    fcitx_utils_start_process(&(optiondesc->rawDefaultValue));
+                    comd = optiondesc->rawDefaultValue;
+                }
+                if (0 == strcmp(optiondesc->optionName, "Parameter") && T_String == optiondesc->type) {
+//                    printf("%s:%d\tDONE! [%s]\n", __FILE__, __LINE__, optiondesc->rawDefaultValue);
+                    para = optiondesc->rawDefaultValue;
+                    if(strcmp("",para) == 0){
+                        char*args[] = {comd,NULL};
+                        fcitx_utils_start_process(args);
+                    } else {
+                        char*args[] = {comd,para};
+                        fcitx_utils_start_process(args);
+                    }
                     return 1;
                 }
             }
