@@ -125,16 +125,18 @@ int fcitx_im_config_thirdpart(FcitxConfigFileDesc *cdesc)
                     comd = optiondesc->rawDefaultValue;
                 }
                 if (0 == strcmp(optiondesc->optionName, "Parameter") && 2 == optiondesc->type) {
-//                    printf("%s:%d\tDONE! [%s]\n", __FILE__, __LINE__, optiondesc->rawDefaultValue);
+                    printf("%s:%d\tDONE! [%s]\n", __FILE__, __LINE__, optiondesc->rawDefaultValue);
                     para = optiondesc->rawDefaultValue;
-                    if(strcmp("",para) == 0){
+                    if((NULL != comd) && (0 == strcmp("",para))){
                         char*args[] = {comd,NULL};
                         fcitx_utils_start_process(args);
-                    } else {
-                        char*args[] = {comd,para};
+                        return 1;
+                    } else if((NULL != comd)&&(NULL != para)) {
+                        printf("%s:%d\tDONE! [%s][%s]\n", __FILE__, __LINE__, comd , para);
+                        char*args[] = {comd,para,NULL};
                         fcitx_utils_start_process(args);
+                        return 1;
                     }
-                    return 1;
                 }
             }
         }
@@ -169,7 +171,7 @@ GtkWidget* fcitx_im_config_dialog_new(GtkWindow* parent, FcitxAddon* addon, gcha
         configurable = (gboolean)(cfdesc != NULL || strlen(addon->subconfig) != 0);
     }
 
-    if (fcitx_im_config_thirdpart(cfdesc)) {
+    if (NULL != cfdesc && fcitx_im_config_thirdpart(cfdesc)) {
         return NULL;
     }
 
