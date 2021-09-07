@@ -866,13 +866,13 @@ void fcitx_config_widget_response(
             fclose(fp);
 
             setConfigChangedFlag(TRUE);
-            fcitx_input_method_reload_config(config_widget->improxy);
-//            GError* error;
-//            gchar* argv[3];
-//            argv[0] = EXEC_PREFIX "/bin/fcitx-remote";
-//            argv[1] = "-r";
-//            argv[2] = 0;
-//            g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
+//            fcitx_input_method_reload_config(config_widget->improxy);
+            GError* error;
+            gchar* argv[3];
+            argv[0] = EXEC_PREFIX "/bin/fcitx-remote";
+            argv[1] = "-r";
+            argv[2] = 0;
+            g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
         }
     } else if (action == CONFIG_WIDGET_RELOAD) {
         FILE* fp = FcitxXDGGetFileUserWithPrefix(config_widget->prefix, config_widget->name, "r", NULL);

@@ -222,7 +222,6 @@ void _fcitx_main_window_add_config_file_page(FcitxMainWindow* self)
                                        );
     fcitx_config_widget_connect(config_widget);
 
-
     g_object_set(G_OBJECT(config_widget), "margin", 5, NULL);
     gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(config_widget), TRUE, TRUE, 0);
 
