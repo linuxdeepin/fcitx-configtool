@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7cef3e02_bd85496f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-09-07T09:00:47Z",
+      "side": 1,
+      "message": "标题不存在或者名称错误, 模块名推荐使用fix|feat|chore|docs|style|refactor|perf|test|abigail 例fix: xxxxx",
+      "revId": "a52efa2a9c435edb71cf028ac902b530bdc6674a",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f19fe7e2_2b0db882",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-09-07T09:00:47Z",
+      "side": 1,
+      "message": "缺少Log信息",
+      "revId": "a52efa2a9c435edb71cf028ac902b530bdc6674a",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a0be4b0d_f6086fdb",
         "filename": "gtk3/im_config_dialog.c",
         "patchSetId": 1
