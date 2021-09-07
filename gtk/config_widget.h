@@ -25,6 +25,7 @@
 #include <gtk/gtk.h>
 #include <glib.h>
 #include <fcitx-config/fcitx-config.h>
+#include <fcitx-gclient/fcitxinputmethod.h>
 #include <fcitx/addon.h>
 #include "sub_config_parser.h"
 
@@ -54,6 +55,7 @@ typedef struct {
     gchar* name;
     FcitxSubConfigParser* parser;
     FcitxGenericConfig gconfig;
+    FcitxInputMethod* improxy;
 } FcitxConfigWidget;
 
 typedef struct {
@@ -63,7 +65,8 @@ typedef struct {
 typedef enum {
     CONFIG_WIDGET_SAVE,
     CONFIG_WIDGET_CANCEL,
-    CONFIG_WIDGET_DEFAULT
+    CONFIG_WIDGET_DEFAULT,
+    CONFIG_WIDGET_RELOAD
 } ConfigWidgetAction;
 
 GType fcitx_config_widget_get_type(void);

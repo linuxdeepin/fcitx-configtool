@@ -24,6 +24,7 @@
 
 #include <gtk/gtk.h>
 #include <glib.h>
+#include <fcitx-gclient/fcitxinputmethod.h>
 #include <fcitx-config/fcitx-config.h>
 #include <fcitx/addon.h>
 #include "sub_config_parser.h"
@@ -68,6 +69,7 @@ typedef struct {
     GtkWidget* fullWidget;
     GtkWidget* advanceCheckBox;
     DummyConfig* config;
+    FcitxInputMethod* improxy;
 } FcitxConfigWidget;
 
 typedef struct {
@@ -77,7 +79,8 @@ typedef struct {
 typedef enum {
     CONFIG_WIDGET_SAVE,
     CONFIG_WIDGET_CANCEL,
-    CONFIG_WIDGET_DEFAULT
+    CONFIG_WIDGET_DEFAULT,
+    CONFIG_WIDGET_RELOAD
 } ConfigWidgetAction;
 
 GType fcitx_config_widget_get_type(void);
@@ -99,7 +102,7 @@ GtkWidget* fcitx_config_dialog_new(FcitxAddon* addon, GtkWindow* parent);
 gboolean getConfigChangedFlag();
 void     setConfigChangedFlag(gboolean flag);
 
-
+void fcitx_config_widget_connect(FcitxConfigWidget* config_widget);
 G_END_DECLS
 
 #endif /* _FCITX_CONFIG_WIDGET */

@@ -220,15 +220,16 @@ void _fcitx_main_window_add_config_file_page(FcitxMainWindow* self)
                                            "config",
                                            NULL
                                        );
+    fcitx_config_widget_connect(config_widget);
+
+
     g_object_set(G_OBJECT(config_widget), "margin", 5, NULL);
     gtk_box_pack_start(GTK_BOX(vbox), GTK_WIDGET(config_widget), TRUE, TRUE, 0);
 
     GtkWidget* hbuttonbox = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
     gtk_box_pack_start(GTK_BOX(vbox), hbuttonbox, FALSE, TRUE, 0);
     g_object_set(G_OBJECT(hbuttonbox), "margin", 5, NULL);
-
     g_signal_connect(config_widget, "changed", (GCallback) _fcitx_main_window_config_widget_changed, NULL);
-
     _fcitx_main_window_add_page(self, _("Global Config"), vbox);
 }
 

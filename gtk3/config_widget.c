@@ -149,6 +149,28 @@ fcitx_config_widget_class_init(FcitxConfigWidgetClass *klass)
 }
 
 static void
+_fcitx_config_widget_reload(FcitxConfigWidget* widget, gpointer user_data)
+{
+    fcitx_config_widget_response(widget, CONFIG_WIDGET_RELOAD);
+}
+
+void fcitx_config_widget_connect(FcitxConfigWidget* self)
+{
+    GError* error = NULL;
+    self->improxy = fcitx_input_method_new(G_BUS_TYPE_SESSION,
+                                          G_DBUS_PROXY_FLAGS_NONE,
+                                          fcitx_utils_get_display_number(),
+                                          NULL,
+                                          &error
+                                         );
+    if (self->improxy == NULL) {
+        g_error_free(error);
+        return;
+    }
+    g_signal_connect(self->improxy, "ui-changed", G_CALLBACK(_fcitx_config_widget_reload), self);
+}
+
+static void
 fcitx_config_widget_init(FcitxConfigWidget *self)
 {
     gtk_orientable_set_orientation(GTK_ORIENTABLE(self), GTK_ORIENTATION_VERTICAL);
@@ -166,7 +188,6 @@ sync_hotkey(KeyGrabButton* button, gpointer user_data)
     if (key1 != key2 || mod1 != mod2)
         keygrab_button_set_key(KEYGRAB_BUTTON(user_data), key1, mod1);
 }
-
 
 static void
 _fcitx_config_widget_hotkey_changed(KeyGrabButton* button, gpointer user_data)
@@ -845,13 +866,20 @@ void fcitx_config_widget_response(
             fclose(fp);
 
             setConfigChangedFlag(TRUE);
+            fcitx_input_method_reload_config(config_widget->improxy);
+//            GError* error;
+//            gchar* argv[3];
+//            argv[0] = EXEC_PREFIX "/bin/fcitx-remote";
+//            argv[1] = "-r";
+//            argv[2] = 0;
+//            g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
+        }
+    } else if (action == CONFIG_WIDGET_RELOAD) {
+        FILE* fp = FcitxXDGGetFileUserWithPrefix(config_widget->prefix, config_widget->name, "r", NULL);
 
-            GError* error;
-            gchar* argv[3];
-            argv[0] = EXEC_PREFIX "/bin/fcitx-remote";
-            argv[1] = "-r";
-            argv[2] = 0;
-            g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
+        if (fp) {
+            dummy_config_load(config_widget->config,fp);
+            dummy_config_sync(config_widget->config);
         }
     }
 }

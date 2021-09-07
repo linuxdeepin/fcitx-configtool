@@ -63,7 +63,6 @@ typedef struct {
     GtkWidget* button;
     GtkWidget* addonview;
     UT_array* addons;
-
 } FcitxMainWindow;
 
 typedef struct {
