@@ -120,7 +120,7 @@ int fcitx_im_config_thirdpart(FcitxConfigFileDesc *cdesc)
     HASH_FOREACH(groupdesc, cdesc->groupsDesc, FcitxConfigGroupDesc) {
         HASH_FOREACH(optiondesc, groupdesc->optionsDesc, FcitxConfigOptionDesc) {
             if (optiondesc->desc && strlen(optiondesc->desc) != 0) {
-                if (0 == strcmp(optiondesc->optionName, "Setting") && 10 == optiondesc->type) {
+                if (0 == strcmp(optiondesc->optionName, "Setting") && T_ExternalOption == optiondesc->type) {
                     //printf("%s:%d\tDONE! [%s]\n", __FILE__, __LINE__, optiondesc->rawDefaultValue);
                     comd = optiondesc->rawDefaultValue;
                 }
