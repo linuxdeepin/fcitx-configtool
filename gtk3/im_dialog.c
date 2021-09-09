@@ -211,7 +211,6 @@ void _fcitx_im_dialog_connect(FcitxImDialog* self)
         return;
     }
     g_signal_connect(self->improxy, "imlist-changed", G_CALLBACK(_fcitx_im_dialog_imlist_changed_cb), self);
-    g_signal_connect(self->improxy, "ui-changed", G_CALLBACK(_fcitx_im_dialog_imlist_changed_cb), self);
 
     _fcitx_im_dialog_load(self);
 }
