@@ -232,8 +232,8 @@ void _fcitx_im_widget_load(FcitxImWidget* self)
 
         if (context.flag)
             gtk_tree_selection_select_iter(gtk_tree_view_get_selection(GTK_TREE_VIEW(self->imview)), &context.iter);
-        g_free(self->focus);
-        self->focus = NULL;
+        //g_free(self->focus);
+        //self->focus = NULL;
 
         _fcitx_im_widget_im_selection_changed(gtk_tree_view_get_selection(GTK_TREE_VIEW(self->imview)), self);
     }
