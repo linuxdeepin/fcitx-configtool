@@ -151,7 +151,8 @@ fcitx_config_widget_class_init(FcitxConfigWidgetClass *klass)
 static void
 _fcitx_config_widget_reload(FcitxConfigWidget* widget, gpointer user_data)
 {
-    fcitx_config_widget_response(widget, CONFIG_WIDGET_RELOAD);
+    FcitxConfigWidget* config_widget = (FcitxConfigWidget*)user_data;
+    fcitx_config_widget_response(config_widget, CONFIG_WIDGET_RELOAD);
 }
 
 void fcitx_config_widget_connect(FcitxConfigWidget* self)
@@ -866,7 +867,6 @@ void fcitx_config_widget_response(
             fclose(fp);
 
             setConfigChangedFlag(TRUE);
-//            fcitx_input_method_reload_config(config_widget->improxy);
             GError* error;
             gchar* argv[3];
             argv[0] = EXEC_PREFIX "/bin/fcitx-remote";
