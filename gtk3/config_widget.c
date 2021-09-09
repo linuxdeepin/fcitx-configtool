@@ -151,7 +151,8 @@ fcitx_config_widget_class_init(FcitxConfigWidgetClass *klass)
 static void
 _fcitx_config_widget_reload(FcitxConfigWidget* widget, gpointer user_data)
 {
-    fcitx_config_widget_response(widget, CONFIG_WIDGET_RELOAD);
+    FcitxConfigWidget* config_widget = (FcitxConfigWidget*) user_data;
+    fcitx_config_widget_response(config_widget, CONFIG_WIDGET_RELOAD);
 }
 
 void fcitx_config_widget_connect(FcitxConfigWidget* self)
@@ -852,8 +853,9 @@ void fcitx_config_widget_response(
     ConfigWidgetAction action
 )
 {
-    if (!config_widget->cfdesc)
+    if (!config_widget->cfdesc) {
         return;
+    }
 
     if (action == CONFIG_WIDGET_DEFAULT) {
         FcitxConfigResetConfigToDefaultValue(&config_widget->config->config);
