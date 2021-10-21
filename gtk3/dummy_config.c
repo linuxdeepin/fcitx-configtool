@@ -32,7 +32,6 @@ DummyConfig* dummy_config_new(FcitxConfigFileDesc* cfdesc)
                 OPTION_TYPE_CASE(Hotkey, FcitxHotkeys);
                 OPTION_TYPE_CASE(String, char*);
                 OPTION_TYPE_CASE(I18NString, char*);
-                OPTION_TYPE_CASE(ExternalOption, char*);
                 default:
                     break;
             }

@@ -45,6 +45,7 @@ Depends:
  fcitx-config-common (= ${source:Version}),
  fcitx, 
  fcitx-implugin,
+ fcitx-defaultim,
  deepin-fcitxconfigtool-plugin,
  ${misc:Depends},
  ${shlibs:Depends},
