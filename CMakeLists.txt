@@ -30,8 +30,8 @@ _fcitx_translate_add_handler(
   "${PROJECT_SOURCE_DIR}/cmake/fcitx-extract-glade.sh" glade)
 
 add_definitions("-D_GNU_SOURCE")
-set(CMAKE_C_FLAGS "-Wall -Wextra -Wno-sign-compare -Wno-unused-local-typedefs -Wno-unused-parameter -fvisibility=hidden ${CMAKE_C_FLAGS}")
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-sign-compare -Wno-unused-local-typedefs -Wno-unused-parameter -fvisibility=hidden ${CMAKE_CXX_FLAGS}")
+set(CMAKE_C_FLAGS "-Wall -Wextra -Wno-sign-compare -Wno-unused-local-typedefs -Wno-unused-parameter -fvisibility=hidden ${CMAKE_C_FLAGS} -g -fsanitize=undefined,address -O2")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-sign-compare -Wno-unused-local-typedefs -Wno-unused-parameter -fvisibility=hidden ${CMAKE_CXX_FLAGS} -g -fsanitize=undefined,address -O2")
 set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined,--as-needed ${CMAKE_SHARED_LINKER_FLAGS}")
 set(CMAKE_MODULE_LINKER_FLAGS "-Wl,--no-undefined,--as-needed ${CMAKE_MODULE_LINKER_FLAGS}")
 
