@@ -117,6 +117,9 @@ int fcitx_im_config_thirdpart(FcitxConfigFileDesc *cdesc)
 {
     char* comd = NULL;
     char* para = NULL;
+    if(cdesc == NULL) {
+        return 0;
+    }
     HASH_FOREACH(groupdesc, cdesc->groupsDesc, FcitxConfigGroupDesc) {
         HASH_FOREACH(optiondesc, groupdesc->optionsDesc, FcitxConfigOptionDesc) {
             if (optiondesc->desc && strlen(optiondesc->desc) != 0) {
