@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c45b969e_336d6d8e",
+        "filename": "debian/fcitx-config-gtk.postinstall",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000368
+      },
+      "writtenOn": "2022-01-07T05:50:58Z",
+      "side": 1,
+      "message": "脚本来自于deein-desktop?",
+      "revId": "ffe74282a7f2de2d4319546601684ca8cc564797",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3db744d6_8d774c8c",
+        "filename": "debian/fcitx-config-gtk.postinstall",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000368
+      },
+      "writtenOn": "2022-01-07T05:50:58Z",
+      "side": 1,
+      "message": "desktop_file_dir 变量名称有问题　这个不是目录吧？",
+      "revId": "ffe74282a7f2de2d4319546601684ca8cc564797",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eccc46ac_e7ef41b5",
+        "filename": "debian/fcitx-config-gtk.postinstall",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000368
+      },
+      "writtenOn": "2022-01-07T05:50:58Z",
+      "side": 1,
+      "message": "此处最好写成　z\"${SYSTYPE}” !\u003d z\"Desktop\"　这样形式　否则当双引号被删除时　将出现错误\n$SYSTYPE !\u003d Desktop　这种情况当出现SYSTYPE为空时　则if判断出错　不过因为有双引号　所以现在这样写也是可以的",
+      "revId": "ffe74282a7f2de2d4319546601684ca8cc564797",
+      "serverId": "7c03bcd7-3a90-48d7-8881-a48a22a829d2",
+      "unresolved": true
+    }
+  ]
+}
