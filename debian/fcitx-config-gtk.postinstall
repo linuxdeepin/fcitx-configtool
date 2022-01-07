@@ -1,0 +1,11 @@
+#!/bin/sh
+desktop_file_path=/usr/share/applications/fcitx-config-gtk3.desktop
+
+SYSTYPE=$(grep Type= /etc/deepin-version|cut -d= -f 2)
+
+if [ "$SYSTYPE" != "Desktop" ]; then
+    rm $desktop_file_dir
+    echo not Desktop
+else
+    echo Desktop
+fi
